@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z/w/pQj23HOu0lhVsawVMkPEDDWLZc4FhZP2TCPZdv4XtvFt+ekjn5hRKz7Ugfi/o7P6nkqiCJhmaY8CwPu+hg==",
+  "dgSpecHash": "9/87q6a86VFsbmHK/2YSqmgKuGf7sK9ApXXIxvr1pVBI7b3/Wg9WV1wYOTQuCdZKmfzOgNFI584IrJlgfDkSMA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bruce\\OneDrive\\Documents\\UiPath\\Challenges\\Lumen Challenge\\BlankProcess\\.local\\",
+  "projectFilePath": "C:\\uipath\\Lumen_RPA_CHALLENGE\\Challenges\\Lumen Challenge\\BlankProcess\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\bruce\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\avalonedit\\6.0.1\\avalonedit.6.0.1.nupkg.sha512",

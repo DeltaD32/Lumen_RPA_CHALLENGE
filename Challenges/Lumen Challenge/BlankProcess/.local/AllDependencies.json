@@ -21141,9 +21141,9 @@
     "restore": {
       "projectUniqueName": "BlankProcess",
       "projectName": "BlankProcess",
-      "projectPath": "C:\\Users\\bruce\\OneDrive\\Documents\\UiPath\\Challenges\\Lumen Challenge\\BlankProcess\\.local",
+      "projectPath": "C:\\uipath\\Lumen_RPA_CHALLENGE\\Challenges\\Lumen Challenge\\BlankProcess\\.local",
       "packagesPath": "C:\\Users\\bruce\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bruce\\OneDrive\\Documents\\UiPath\\Challenges\\Lumen Challenge\\BlankProcess\\.local"
+      "outputPath": "C:\\uipath\\Lumen_RPA_CHALLENGE\\Challenges\\Lumen Challenge\\BlankProcess\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {
