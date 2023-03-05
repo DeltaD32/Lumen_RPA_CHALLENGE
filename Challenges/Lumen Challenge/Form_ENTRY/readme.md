@@ -18,6 +18,12 @@
 2. **Comp_ExerciseExecute**
     - Establishes working data table from downloaded Excel File
     - Grabs Headers for use in Loop
-    _
+    - Loops Through each Data Table row and each column header
+        <br><img src="https://github.com/DeltaD32/Lumen_RPA_CHALLENGE/blob/main/Challenges/Lumen%20Challenge/Form_ENTRY/Loop%20Screenshot.png?raw=true" width="300"><br>
+        - Gets ID Attribute for each column header that matches Entry Fields.
+        - Types Column value into Field with ID Number grabbed from previous step 
+        - Validates data table value entered into field matches row value. 
+    - Once Loop is complete, grabs execution results and performs math on time to present in message box. 
     
+
     
