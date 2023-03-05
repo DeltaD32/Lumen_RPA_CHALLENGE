@@ -8,7 +8,7 @@
     <x:Property Name="var_field_count" Type="OutArgument(x:String)" />
     <x:Property Name="var_execurtion_time" Type="OutArgument(x:Int32)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1775.3333333333333,5482.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1775.3333333333333,5288.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -115,13 +115,13 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="846,5418" sap2010:WorkflowViewState.IdRef="Sequence_67">
+  <Sequence sap:VirtualizedContainerService.HintSize="846,5224" sap2010:WorkflowViewState.IdRef="Sequence_67">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Excercise Sequence" sap:VirtualizedContainerService.HintSize="784,5307.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_39">
+    <Sequence DisplayName="Excercise Sequence" sap:VirtualizedContainerService.HintSize="784,5113.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_39">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_items" />
         <Variable x:TypeArguments="sd:DataColumnCollection" Name="dt_columns" />
@@ -245,13 +245,13 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[browser_tab]" BrowserType="Chrome" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="722,2726.6666666666665" sap2010:WorkflowViewState.IdRef="BrowserScope_2">
+      <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[browser_tab]" BrowserType="Chrome" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="722,2532.6666666666665" sap2010:WorkflowViewState.IdRef="BrowserScope_2">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="688,2617.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_40">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="688,2423.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_40">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="tmp_round_name" />
               </Sequence.Variables>
@@ -260,13 +260,13 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_items]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="626,2506.6666666666665" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_items]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="626,2312.6666666666665" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,2390" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,2196" sap2010:WorkflowViewState.IdRef="Sequence_43">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="var_email" />
                         <Variable x:TypeArguments="x:String" Name="var_firstname" />
@@ -281,7 +281,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="innertext" DisplayName="Get Attribute 'BUTTON'" sap:VirtualizedContainerService.HintSize="530,206" sap2010:WorkflowViewState.IdRef="GetAttribute_12">
+                      <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="innertext" DisplayName="Get Attribute Round Number" sap:VirtualizedContainerService.HintSize="530,54" sap2010:WorkflowViewState.IdRef="GetAttribute_12">
                         <ui:GetAttribute.Result>
                           <OutArgument x:TypeArguments="x:String">[tmp_round_name]</OutArgument>
                         </ui:GetAttribute.Result>
@@ -295,8 +295,21 @@
                             </ui:Target.WaitForReady>
                           </ui:Target>
                         </ui:GetAttribute.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
                       </ui:GetAttribute>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,96" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[tmp_round_name]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,54" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[tmp_round_name]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:LogMessage>
                       <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="530,1614" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[dt_columns]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="x:Object">
