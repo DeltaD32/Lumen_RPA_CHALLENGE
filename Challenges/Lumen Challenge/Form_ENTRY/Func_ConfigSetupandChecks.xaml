@@ -1,0 +1,784 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Func_ConfigSetupandChecks" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="internal_process" Type="OutArgument(x:String)" />
+    <x:Property Name="var_Exercise_doc" Type="OutArgument(x:String)" />
+    <x:Property Name="browser_tab" Type="InOutArgument(ui:Browser)" />
+    <x:Property Name="var_download_location" Type="InOutArgument(x:String)" />
+    <x:Property Name="url_browser" Type="InOutArgument(x:String)" />
+    <x:Property Name="var_title_page" Type="InOutArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>502,260</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="76">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="128">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="512,195.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_69">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Config Setup" sap:VirtualizedContainerService.HintSize="450,84.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="var_chrome_download" />
+        <Variable x:TypeArguments="x:Boolean" Name="bool_chrome_installed" />
+        <Variable x:TypeArguments="x:Boolean" Name="bool_windows" />
+        <Variable x:TypeArguments="x:Int32" Name="count" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap:VirtualizedContainerService.HintSize="750,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[internal_process]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Config Setup</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="750,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Starting: &quot;+internal_process]" />
+      <Assign sap:VirtualizedContainerService.HintSize="750,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[var_Exercise_doc]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">C:\temp\Exercise.xlsx</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="750,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_13">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">0</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[bool_windows = True]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="750,610.6666666666666" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+        <ui:InterruptibleDoWhile.Body>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="536,440" sap2010:WorkflowViewState.IdRef="Sequence_68">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="474,329.3333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch.Try>
+                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Checking Browsers" sap:VirtualizedContainerService.HintSize="530,578" sap2010:WorkflowViewState.IdRef="BrowserScope_4" InformativeScreenshot="2524d9d85787db5e83f5ad8eac021ece" Selector="&lt;html app='chrome.exe' title='*' /&gt;" TimeoutMS="1000">
+                  <ui:BrowserScope.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,430.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window" sap:VirtualizedContainerService.HintSize="434,69.33333333333333" sap2010:WorkflowViewState.IdRef="CloseWindow_1" WaitForReady="INTERACTIVE" />
+                        <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_15">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[bool_windows]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_14">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[count]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:BrowserScope.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:BrowserScope>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="440,156" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_16">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Boolean">[bool_windows]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+          </Sequence>
+        </ui:InterruptibleDoWhile.Body>
+      </ui:InterruptibleDoWhile>
+      <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists" Exists="[bool_chrome_installed]" sap:VirtualizedContainerService.HintSize="750,54" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Google Chrome.lnk" PathType="File">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:PathExists>
+      <If Condition="[bool_chrome_installed]" sap:VirtualizedContainerService.HintSize="750,54" sap2010:WorkflowViewState.IdRef="If_7">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="376,183.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_56">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;Chrome Shortcut Exists&quot;]" />
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence sap:VirtualizedContainerService.HintSize="376,179.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_57">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Throw Exception="[new BusinessRuleException(&quot;Chrome is not Installed.&quot;)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          </Sequence>
+        </If.Else>
+      </If>
+      <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="750,54" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" NewSession="True" UiBrowser="[browser_tab]" Url="google.com">
+        <ui:OpenBrowser.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="716,2468.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_55">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="ui:UiElement" Name="restore_button" />
+                <Variable x:TypeArguments="x:Boolean" Name="bool_restore_button" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Sequence DisplayName="Check if Killed" sap:VirtualizedContainerService.HintSize="654,888" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:UiElementExists DisplayName="Element Exists 'push button  Restore'" Exists="[bool_restore_button]" sap:VirtualizedContainerService.HintSize="410,107.33333333333333" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                  <ui:UiElementExists.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7cf91a89-316d-4d28-97d7-628106687950" InformativeScreenshot="0088b247b1ab76c34c9cedbdf8aab109" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Restore pages?' /&gt;&lt;ctrl name='Restore pages?' role='alert' /&gt;&lt;ctrl name='Restore' role='push button' /&gt;" TimeoutMS="3">
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:UiElementExists.Target>
+                </ui:UiElementExists>
+                <If Condition="[bool_restore_button=True]" sap:VirtualizedContainerService.HintSize="410,630" sap2010:WorkflowViewState.IdRef="If_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,294.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="session_data" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  Cancel'" sap:VirtualizedContainerService.HintSize="334,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="34f1d059-ad4b-4403-a392-2bbddd3efbda" InformativeScreenshot="1d9f3d25f7b564fb27ed001d01698795" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Restore pages?' /&gt;&lt;ctrl name='Restore pages?' role='alert' /&gt;&lt;ctrl name='Cancel' role='push button' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                      <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="NavigateTo_6" Url="google.com" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,183.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;Chrome Properly Loaded&quot;]" />
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+              <Sequence DisplayName="Check Settings" sap:VirtualizedContainerService.HintSize="654,1430" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'chrome.exe Google'" sap:VirtualizedContainerService.HintSize="592,1319.3333333333333" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="148b82c6160b8cb9df37bce2bf791af1" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='*' /&gt;&lt;ctrl name='*' role='pane' /&gt;&lt;ctrl name='Google' role='page tab' /&gt;">
+                  <ui:WindowScope.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558,1172" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:NavigateTo Browser="[browser_tab]" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="496,60" sap2010:WorkflowViewState.IdRef="NavigateTo_7" Url="chrome://settings/downloads" />
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'page tab'" sap:VirtualizedContainerService.HintSize="496,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6d690cd5-6016-4208-8afa-1c51e00abb1c" InformativeScreenshot="567463bc6ba00f9927fafbe618f57976" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='*' /&gt;&lt;ctrl name='*' role='pane' /&gt;&lt;ctrl name='Settings - Downloads' role='page tab' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                        <Sequence DisplayName="Screen Scraping" sap:VirtualizedContainerService.HintSize="496,678" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="ui:GenericValue" Name="Pane" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="9bcd0e11-4c2d-4414-a494-da2e4efe9b1b" DisplayName="CV Screen Scope 'pane'" sap:VirtualizedContainerService.HintSize="434,567.3333333333334" sap2010:WorkflowViewState.IdRef="CVScope_2" SendOnPremData="False" UseLocalServer="True" Version="V5">
+                            <p:CVScope.Body>
+                              <ActivityAction x:TypeArguments="x:Object">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                  <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: AnyWordGroup (374,137,160,14)&quot; +&#xA;&quot;Anchor: Text 'Downloads' (355,86,74,14)&quot;]" DesignTimeCacheId="9bcd0e11-4c2d-4414-a494-da2e4efe9b1b" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,226" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="d4ee07f81bd571d676f23890fce8e0a4" NumberOfScrolls="2" RefreshBefore="True" Result="[var_chrome_download]" ScrollDirection="None" Version="V5">
+                                    <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                      <uc:CvDescriptor Id="0f7e795e-4abc-4d46-b458-4ce54d01257c">
+                                        <uc:CvDescriptor.Anchors>
+                                          <x:Array Type="uc:CvElementDescriptor">
+                                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="355, 86, 74, 14" ElementType="Text" Text="Downloads" />
+                                          </x:Array>
+                                        </uc:CvDescriptor.Anchors>
+                                        <uc:CvDescriptor.Target>
+                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="374, 137, 160, 14" ElementType="AnyWordGroup" />
+                                        </uc:CvDescriptor.Target>
+                                      </uc:CvDescriptor>
+                                    </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                                  </p:CvGetTextWithDescriptor>
+                                </Sequence>
+                              </ActivityAction>
+                            </p:CVScope.Body>
+                            <p:CVScope.DesignTimeCache>
+                              <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+                            </p:CVScope.DesignTimeCache>
+                            <p:CVScope.DesignTimeCacheContainer>
+                              <uc:CvCacheContainer>
+                                <uc:CvCacheContainer.Caches>
+                                  <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
+                                    <uc:CVCache DataSent="False" DisplayName="Screen CV Get Text - '' (Main)" Id="9bcd0e11-4c2d-4414-a494-da2e4efe9b1b" InformativeScreenshot="43f6f142b5e8c480f591a0f858ba55e1" LogicalPosition="1257, 258" OcrText="Settings Search settings You and Google Downloads Autofill C:\Users\bruce\Downloads Change Privacy and security Ask where to save each file before Performance downloading Appearance Search engine Default browser On startup Languages Downloads Accessibility System Reset and clean up Extensions About Chrome" Position="1257, 258">
+                                      <uc:CVCache.CvAnchorRelations>
+                                        <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="4">
+                                          <uc:AnchorRelationInfo IsTargetText="False" Target="19">
+                                            <uc:AnchorRelationInfo.Anchors>
+                                              <x:Array Type="x:Int32">
+                                                <x:Int32>1</x:Int32>
+                                                <x:Int32>2</x:Int32>
+                                              </x:Array>
+                                            </uc:AnchorRelationInfo.Anchors>
+                                          </uc:AnchorRelationInfo>
+                                        </scg:List>
+                                      </uc:CVCache.CvAnchorRelations>
+                                      <uc:CVCache.CvUiElements>
+                                        <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="64">
+                                          <uc:CvElementInfo Category="Icon" Region="22, 112, 22, 22" />
+                                          <uc:CvElementInfo Category="Icon" Region="22, 272, 22, 22" />
+                                          <uc:CvElementInfo Category="Icon" Region="22, 152, 23, 24" />
+                                          <uc:CvElementInfo Category="Icon" Region="23, 233, 21, 21" />
+                                          <uc:CvElementInfo Category="Icon" Region="20, 528, 28, 26" />
+                                          <uc:CvElementInfo Category="Icon" Region="20, 625, 27, 25" />
+                                          <uc:CvElementInfo Category="Icon" Region="366, 16, 23, 23" />
+                                          <uc:CvElementInfo Category="Icon" Region="22, 409, 23, 23" />
+                                          <uc:CvElementInfo Category="Icon" Region="22, 570, 23, 22" />
+                                          <uc:CvElementInfo Category="Icon" Region="21, 488, 25, 25" />
+                                          <uc:CvElementInfo Category="Button" Region="936, 127, 82, 35" />
+                                          <uc:CvElementInfo Category="Icon" Region="21, 665, 26, 25" />
+                                          <uc:CvElementInfo Category="Icon" Region="22, 72, 24, 23" />
+                                          <uc:CvElementInfo Category="Icon" Region="22, 314, 23, 21" />
+                                          <uc:CvElementInfo Category="Icon" Region="23, 448, 21, 23" />
+                                          <uc:CvElementInfo Category="Icon" Region="22, 193, 24, 22" />
+                                          <uc:CvElementInfo Category="Icon" Region="22, 352, 23, 23" />
+                                          <uc:CvElementInfo Category="Icon" Region="17, 12, 31, 31" />
+                                          <uc:CvElementInfo Category="Icon" Region="148, 626, 21, 22" />
+                                          <uc:CvElementInfo Category="InputBox" Region="354, 9, 689, 40" />
+                                          <uc:CvElementInfo Category="Icon" Region="978, 184, 39, 21" />
+                                          <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="978, 181, 40, 25" />
+                                          <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="23, 194, 21, 20" />
+                                          <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="0, 439, 250, 42" />
+                                          <uc:CvElementInfo Category="CheckBox" Confidence="Runtime" Region="149, 628, 19, 19" />
+                                          <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="365, 169, 673, 50" />
+                                          <uc:CvElementInfo Category="RadioButton" Confidence="Runtime" Region="21, 666, 25, 23" />
+                                          <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="22, 570, 22, 21" />
+                                          <uc:CvElementInfo Category="RadioButton" Confidence="Runtime" Region="17, 13, 31, 30" />
+                                          <uc:CvElementInfo Category="CloseButton" Confidence="Runtime" Region="148, 627, 21, 20" />
+                                          <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="362, 169, 676, 51" />
+                                          <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="148, 627, 22, 21" />
+                                          <uc:CvElementInfo Category="RadioButton" Confidence="Runtime" Region="22, 570, 23, 21" />
+                                          <uc:CvElementInfo Category="RadioButton" Confidence="Runtime" Region="149, 627, 21, 21" />
+                                          <uc:CvElementInfo Category="RadioButton" Confidence="Runtime" Region="22, 193, 23, 22" />
+                                        </scg:List>
+                                      </uc:CVCache.CvUiElements>
+                                      <uc:CVCache.OcrTexts>
+                                        <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="40">
+                                          <uc:OcrTextInfo Region="65, 17, 86, 25" Text="Settings" />
+                                          <uc:OcrTextInfo Region="400, 20, 43, 13" Text="Search" />
+                                          <uc:OcrTextInfo Region="444, 20, 49, 16" Text="settings" />
+                                          <uc:OcrTextInfo Region="62, 76, 27, 14" Text="You" />
+                                          <uc:OcrTextInfo Region="89, 75, 27, 15" Text="and" />
+                                          <uc:OcrTextInfo Region="116, 75, 48, 17" Text="Google" />
+                                          <uc:OcrTextInfo Region="355, 86, 74, 14" Text="Downloads" />
+                                          <uc:OcrTextInfo Region="61, 115, 48, 14" Text="Autofill" />
+                                          <uc:OcrTextInfo Region="374, 137, 160, 14" Text="C:\Users\bruce\Downloads" />
+                                          <uc:OcrTextInfo Region="954, 137, 46, 16" Text="Change" />
+                                          <uc:OcrTextInfo Region="63, 156, 49, 16" Text="Privacy" />
+                                          <uc:OcrTextInfo Region="112, 155, 25, 15" Text="and" />
+                                          <uc:OcrTextInfo Region="139, 156, 53, 16" Text="security" />
+                                          <uc:OcrTextInfo Region="375, 186, 24, 13" Text="Ask" />
+                                          <uc:OcrTextInfo Region="399, 186, 38, 13" Text="where" />
+                                          <uc:OcrTextInfo Region="437, 187, 15, 12" Text="to" />
+                                          <uc:OcrTextInfo Region="453, 188, 29, 11" Text="save" />
+                                          <uc:OcrTextInfo Region="483, 186, 30, 13" Text="each" />
+                                          <uc:OcrTextInfo Region="513, 185, 20, 14" Text="file" />
+                                          <uc:OcrTextInfo Region="533, 186, 41, 14" Text="before" />
+                                          <uc:OcrTextInfo Region="63, 195, 84, 15" Text="Performance" />
+                                          <uc:OcrTextInfo Region="574, 186, 78, 16" Text="downloading" />
+                                          <uc:OcrTextInfo Region="61, 236, 79, 17" Text="Appearance" />
+                                          <uc:OcrTextInfo Region="62, 275, 46, 14" Text="Search" />
+                                          <uc:OcrTextInfo Region="109, 276, 45, 16" Text="engine" />
+                                          <uc:OcrTextInfo Region="63, 315, 47, 14" Text="Default" />
+                                          <uc:OcrTextInfo Region="111, 315, 54, 15" Text="browser" />
+                                          <uc:OcrTextInfo Region="62, 356, 21, 14" Text="On" />
+                                          <uc:OcrTextInfo Region="83, 356, 48, 16" Text="startup" />
+                                          <uc:OcrTextInfo Region="62, 413, 72, 17" Text="Languages" />
+                                          <uc:OcrTextInfo Region="62, 452, 73, 14" Text="Downloads" />
+                                          <uc:OcrTextInfo Region="62, 491, 83, 18" Text="Accessibility" />
+                                          <uc:OcrTextInfo Region="62, 532, 50, 17" Text="System" />
+                                          <uc:OcrTextInfo Region="63, 573, 38, 13" Text="Reset" />
+                                          <uc:OcrTextInfo Region="102, 572, 25, 14" Text="and" />
+                                          <uc:OcrTextInfo Region="128, 572, 36, 14" Text="clean" />
+                                          <uc:OcrTextInfo Region="165, 575, 18, 15" Text="up" />
+                                          <uc:OcrTextInfo Region="63, 630, 71, 14" Text="Extensions" />
+                                          <uc:OcrTextInfo Region="62, 669, 41, 14" Text="About" />
+                                          <uc:OcrTextInfo Region="103, 669, 52, 15" Text="Chrome" />
+                                        </scg:List>
+                                      </uc:CVCache.OcrTexts>
+                                    </uc:CVCache>
+                                  </scg:List>
+                                </uc:CvCacheContainer.Caches>
+                              </uc:CvCacheContainer>
+                            </p:CVScope.DesignTimeCacheContainer>
+                            <p:CVScope.OCREngine>
+                              <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                                <ActivityFunc.Argument>
+                                  <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                                </ActivityFunc.Argument>
+                                <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,25.333333333333332" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_5" Image="[Image]" Language="en" Profile="Screen" Scale="1" Timeout="100000" UseLocalServer="True" />
+                              </ActivityFunc>
+                            </p:CVScope.OCREngine>
+                            <p:CVScope.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="331d48b0-649e-44df-a9f3-bfd94d77bee8" InformativeScreenshot="c6e4103f964085c628d6d7b1ab5c2271" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Settings - Downloads - Google Chrome' /&gt;&lt;ctrl name='Settings - Downloads - Google Chrome' role='pane' /&gt;&lt;ctrl idx='7' role='pane' /&gt;" WaitForReady="INTERACTIVE">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                              </ui:Target>
+                            </p:CVScope.Target>
+                          </p:CVScope>
+                        </Sequence>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,96" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[var_chrome_download]" />
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:WindowScope.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:WindowScope>
+              </Sequence>
+            </Sequence>
+          </ActivityAction>
+        </ui:OpenBrowser.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:OpenBrowser>
+      <Assign sap:VirtualizedContainerService.HintSize="750,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_6">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[var_download_location]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["C:\Users\"+System.Environment.UserName+"\Downloads"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <If Condition="[var_download_location=var_chrome_download]" sap:VirtualizedContainerService.HintSize="750,644" sap2010:WorkflowViewState.IdRef="If_5">
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="376,183.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_34">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Download Location Match&quot;]" />
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence sap:VirtualizedContainerService.HintSize="476,308.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_35">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Custom Download Location. Adjusting&quot;]" />
+            <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[var_download_location]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[var_chrome_download]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </If.Else>
+      </If>
+      <Assign sap:VirtualizedContainerService.HintSize="750,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[url_browser]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">rpachallenge.com</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="750,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Completed: &quot;+internal_process]" />
+      <Sequence DisplayName="Browser Activity" sap:VirtualizedContainerService.HintSize="750,562" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[internal_process]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">Config Setup</InArgument>
+          </Assign.Value>
+        </Assign>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Starting: Config Distribution&quot;]" />
+        <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[browser_tab]" BrowserType="Chrome" DisplayName="Download Excel" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+          <ui:BrowserScope.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="608,1521.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="546,25.333333333333332" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+                <ui:NavigateTo Browser="[browser_tab]" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="546,60" sap2010:WorkflowViewState.IdRef="NavigateTo_4" Url="[url_browser]" />
+                <Sequence DisplayName="Establish Site" sap:VirtualizedContainerService.HintSize="546,410" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="var_download" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'DIV'" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                    <ui:GetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6efda988-bc3e-49ef-94ce-55393571a390" InformativeScreenshot="f612a89010948e4c9205dcba05939d35" Selector="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;&lt;webctrl tag='A' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:GetValue.Target>
+                    <ui:GetValue.Value>
+                      <OutArgument x:TypeArguments="x:String">[var_title_page]</OutArgument>
+                    </ui:GetValue.Value>
+                  </ui:GetValue>
+                  <If Condition="[var_title_page.Contains(&quot;RPA&quot;)]" sap:VirtualizedContainerService.HintSize="388,152" sap2010:WorkflowViewState.IdRef="If_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,183.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[internal_process.ToString+&quot; is loaded properly&quot;]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,183.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Error" Message="[&quot;RPA Challenge Page Not loaded Properly&quot;]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+                <Sequence DisplayName="Download Excel Doc" sap:VirtualizedContainerService.HintSize="546,795.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="si:FileInfo" Name="var_work_file" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:GetLastDownloadedFile Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[var_download_location]" File="[var_work_file]" sap:VirtualizedContainerService.HintSize="484,480" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_2" IgnoreFiles=".tmp">
+                    <ui:GetLastDownloadedFile.Body>
+                      <ActivityAction>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Downloading Excel" sap:VirtualizedContainerService.HintSize="388,107.33333333333333" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click.CursorPosition>
+                              <ui:CursorPosition Position="Center">
+                                <ui:CursorPosition.OffsetX>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetX>
+                                <ui:CursorPosition.OffsetY>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetY>
+                              </ui:CursorPosition>
+                            </ui:Click.CursorPosition>
+                            <ui:Click.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="61b9df57-bf3d-4481-bbaa-58800f9c5897" InformativeScreenshot="fb9e305a0670c9fcc4ec7abfb3ab87a7" Selector="&lt;html app='chrome.exe' title='Rpa Challenge' /&gt;&lt;webctrl aaname=' Download Excel cloud_download' tag='A' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:Click.Target>
+                          </ui:Click>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:GetLastDownloadedFile.Body>
+                  </ui:GetLastDownloadedFile>
+                  <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[var_Exercise_doc]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="484,164.66666666666666" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[var_work_file.ToString]" />
+                </Sequence>
+              </Sequence>
+            </ActivityAction>
+          </ui:BrowserScope.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:BrowserScope>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Completed: Config Distribution&quot;]" />
+      </Sequence>
+    </Sequence>
+  </Sequence>
+</Activity>
