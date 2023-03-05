@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9/87q6a86VFsbmHK/2YSqmgKuGf7sK9ApXXIxvr1pVBI7b3/Wg9WV1wYOTQuCdZKmfzOgNFI584IrJlgfDkSMA==",
+  "dgSpecHash": "FhQk3RJAks8lbfn16Z4aj83GPKmUvHHrNHoBFQAwYtl9Le0iehRnVfHPXJNDop3k64NFIF5MZv0Mk3tGOQu5/g==",
   "success": true,
   "projectFilePath": "C:\\uipath\\Lumen_RPA_CHALLENGE\\Challenges\\Lumen Challenge\\BlankProcess\\.local\\",
   "expectedPackageFiles": [
@@ -71,7 +71,7 @@
     "C:\\Users\\bruce\\.nuget\\packages\\microsoft.powershell.native\\7.1.0\\microsoft.powershell.native.7.1.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\microsoft.powershell.sdk\\7.1.0\\microsoft.powershell.sdk.7.1.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\microsoft.powershell.security\\7.1.0\\microsoft.powershell.security.7.1.0.nupkg.sha512",
-    "C:\\Users\\bruce\\.nuget\\packages\\microsoft.rest.clientruntime\\2.3.21\\microsoft.rest.clientruntime.2.3.21.nupkg.sha512",
+    "C:\\Users\\bruce\\.nuget\\packages\\microsoft.rest.clientruntime\\2.3.23\\microsoft.rest.clientruntime.2.3.23.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\microsoft.rest.clientruntime.azure\\3.3.18\\microsoft.rest.clientruntime.azure.3.3.18.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\microsoft.visualbasic\\10.3.0\\microsoft.visualbasic.10.3.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\microsoft.visualstudio.ole.interop\\16.7.30328.74\\microsoft.visualstudio.ole.interop.16.7.30328.74.nupkg.sha512",
@@ -172,6 +172,7 @@
     "C:\\Users\\bruce\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.diagnostics.eventlog\\5.0.0\\system.diagnostics.eventlog.5.0.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.diagnostics.performancecounter\\5.0.0\\system.diagnostics.performancecounter.5.0.0.nupkg.sha512",
+    "C:\\Users\\bruce\\.nuget\\packages\\system.diagnostics.process\\4.3.0\\system.diagnostics.process.4.3.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.diagnostics.tools\\4.3.0\\system.diagnostics.tools.4.3.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.diagnostics.tracing\\4.3.0\\system.diagnostics.tracing.4.3.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.directoryservices\\5.0.0\\system.directoryservices.5.0.0.nupkg.sha512",
@@ -211,7 +212,7 @@
     "C:\\Users\\bruce\\.nuget\\packages\\system.private.uri\\4.3.0\\system.private.uri.4.3.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.reflection.context\\5.0.0\\system.reflection.context.5.0.0.nupkg.sha512",
-    "C:\\Users\\bruce\\.nuget\\packages\\system.reflection.dispatchproxy\\4.5.0\\system.reflection.dispatchproxy.4.5.0.nupkg.sha512",
+    "C:\\Users\\bruce\\.nuget\\packages\\system.reflection.dispatchproxy\\4.7.1\\system.reflection.dispatchproxy.4.7.1.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.7.0\\system.reflection.emit.ilgeneration.4.7.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
@@ -219,6 +220,7 @@
     "C:\\Users\\bruce\\.nuget\\packages\\system.reflection.metadata\\5.0.0\\system.reflection.metadata.5.0.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.reflection.typeextensions\\4.3.0\\system.reflection.typeextensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\bruce\\.nuget\\packages\\system.resources.extensions\\5.0.0\\system.resources.extensions.5.0.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.resources.resourcemanager\\4.3.0\\system.resources.resourcemanager.4.3.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.runtime.caching\\5.0.0\\system.runtime.caching.5.0.0.nupkg.sha512",
@@ -263,6 +265,8 @@
     "C:\\Users\\bruce\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.threading.tasks.dataflow\\5.0.0\\system.threading.tasks.dataflow.5.0.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\bruce\\.nuget\\packages\\system.threading.thread\\4.3.0\\system.threading.thread.4.3.0.nupkg.sha512",
+    "C:\\Users\\bruce\\.nuget\\packages\\system.threading.threadpool\\4.3.0\\system.threading.threadpool.4.3.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
@@ -270,12 +274,16 @@
     "C:\\Users\\bruce\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\uipath\\22.10.49.23\\uipath.22.10.49.23.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\uipath.activities.runtimegovernance\\1.1.6\\uipath.activities.runtimegovernance.1.1.6.nupkg.sha512",
+    "C:\\Users\\bruce\\.nuget\\packages\\uipath.computervision.localserver\\22.7.2\\uipath.computervision.localserver.22.7.2.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\uipath.connectionclient\\1.4.1\\uipath.connectionclient.1.4.1.nupkg.sha512",
+    "C:\\Users\\bruce\\.nuget\\packages\\uipath.coreipc\\2.0.1\\uipath.coreipc.2.0.1.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\uipath.excel.activities\\2.17.0-preview\\uipath.excel.activities.2.17.0-preview.nupkg.sha512",
+    "C:\\Users\\bruce\\.nuget\\packages\\uipath.formactivitylibrary.contracts\\2.0.4\\uipath.formactivitylibrary.contracts.2.0.4.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\uipath.imageprocessing\\22.4.1\\uipath.imageprocessing.22.4.1.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\uipath.mail.activities\\1.18.2\\uipath.mail.activities.1.18.2.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\uipath.ocr.activities\\3.11.0\\uipath.ocr.activities.3.11.0.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\uipath.ocr.contracts\\2.13.0\\uipath.ocr.contracts.2.13.0.nupkg.sha512",
+    "C:\\Users\\bruce\\.nuget\\packages\\uipath.persistence.activities\\1.4.3\\uipath.persistence.activities.1.4.3.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\uipath.platform\\22.10.2\\uipath.platform.22.10.2.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\uipath.system.activities\\22.10.4\\uipath.system.activities.22.10.4.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\uipath.telemetry.client\\1.5.3\\uipath.telemetry.client.1.5.3.nupkg.sha512",
@@ -285,5 +293,18 @@
     "C:\\Users\\bruce\\.nuget\\packages\\uipath.webapi.activities\\1.15.0-preview\\uipath.webapi.activities.1.15.0-preview.nupkg.sha512",
     "C:\\Users\\bruce\\.nuget\\packages\\uipath.webapi.runtime\\1.15.0-preview\\uipath.webapi.runtime.1.15.0-preview.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "filePath": "C:\\uipath\\Lumen_RPA_CHALLENGE\\Challenges\\Lumen Challenge\\BlankProcess\\.local",
+      "message": "UiPath.Persistence.Activities 1.4.3 depends on UiPath.FormActivityLibrary.Contracts (>= 2.0.4-alpha.3202189) but UiPath.FormActivityLibrary.Contracts 2.0.4-alpha.3202189 was not found. An approximate best match of UiPath.FormActivityLibrary.Contracts 2.0.4 was resolved.",
+      "libraryId": "UiPath.FormActivityLibrary.Contracts",
+      "targetGraphs": [
+        "net6.0-windows7.0",
+        "net6.0-windows7.0/win10-x64"
+      ]
+    }
+  ]
 }

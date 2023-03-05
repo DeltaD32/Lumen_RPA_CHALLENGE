@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1737.3333333333333,1392.6666666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1775.3333333333333,907.3333333333334" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="58">
+    <scg:List x:TypeArguments="x:String" Capacity="52">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -31,10 +31,32 @@
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="41">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="65">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -75,61 +97,98 @@
       <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="558,1328" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="450,508" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="url_browser" />
+      <Variable x:TypeArguments="x:String" Name="internal_process" />
+      <Variable x:TypeArguments="x:String" Name="app_path" />
+      <Variable x:TypeArguments="x:String" Name="var_title_page" />
+      <Variable x:TypeArguments="x:String" Name="var_download_location" />
+      <Variable x:TypeArguments="ui:Browser" Name="browser_tab" />
+      <Variable x:TypeArguments="x:String" Name="var_Exercise_doc" />
+      <Variable x:TypeArguments="x:String" Name="var_details" />
+      <Variable x:TypeArguments="x:String" Name="var_success_rate" />
+      <Variable x:TypeArguments="x:String" Name="var_field_count" />
+      <Variable x:TypeArguments="x:Int32" Name="var_execurtion_time" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Config Setup" sap:VirtualizedContainerService.HintSize="496,468" sap2010:WorkflowViewState.IdRef="Sequence_3">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Starting: Config Distribution&quot;]" />
-      <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[url_browser]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">rpachallenge.com</InArgument>
-        </Assign.Value>
-      </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Completed: Config Distribution&quot;]" />
-    </Sequence>
-    <Sequence DisplayName="Browser Activity" sap:VirtualizedContainerService.HintSize="496,342.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Starting: Config Distribution&quot;]" />
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Completed: Config Distribution&quot;]" />
-    </Sequence>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: YouTube" sap:VirtualizedContainerService.HintSize="496,326.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="d4775a4a-6b23-4d95-addb-87f92e03ac7a" Version="V2">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,107.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </Sequence>
-        </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAACp0lEQVRYR8XXz0tUURQH8K8/8hZiYfmDmqgLuQhrE+1diLRxldAfEIQQBBJIIkHQKqpFG0FIEVsFQlGJRokEgqFgmo7m2GCvH8yEjDkkIaLl6XsfDoGc12g4rwufWZxz7j2H92OYgYj8V2owTGowTGowTFhdXfWt0Dda2JTe9J3kjzwq+It88mvXKXPGEmXOTdEPyvSFtRYROk6XrD3Tae3lfmvvxqztnrf26WdrBzesHRZr39AkzdI7hYtP0ziNrlg7xP0v6XHU2q4+a+/w7CtN1tactjbvMPu53v46CBQ/Abo3gF/+XcmxceDVSeCY37wQyBtgc60wl2LAUAlQhHPAWQZ+bi0Iw3mgFjeBJi0ZhnvAdTwE2rVkGHqBB3gNPNOSgcrLRVpbRUpL9fwOsPcA4sCwlgzkBlhfF4nHRRoa9Jpt+gSMg09jVEsGKisTSaX4Jba5enpEqqr02iySwJwbYE5LBto6gFvptEhzs0hRkb4nQAL4whEQ05KBtAEya2JCpL5e36f4CiTxYTeuQGa5K9HYqO9TLLgBduUWuNXRIRKJ6HsC8BYk3AAzWjLQ1gHGxkTq6vTaLDjAPN4DI1oykBtgbU1keVmkpUXEGL1uG/gWTGEM6NeSgSorRbq6RKqr9fwOsPcQeoBOLRkoP1+P/4NBsP1t4JqWDEM7cAsNQI2WDEMj2L4Y2DMJvNAKcolfQjNHAf4m4ToFRKb5QGiFucDXb7rWb8tljHEfqDCm8KoxFx4Z0zZiTF/CmJGkMbOLxnzkq5akFKVpOYslcrVJt9edwbNGeebzXmPu3zDm4gljSlxPv7fneb44vaUpilGCkp5XsOh5+8TzDtAhqqQjWVSQq93PvXvdGe4sd2aUXI85yvTlNdH/MIRFDYZJDYZJDYZH8BtrTS5QuubtDwAAAABJRU5ErkJggg==" InformativeScreenshot="9aac2d5deb569238565fda0688320695.jpg" Selector="&lt;html app='chrome.exe' title='YouTube' /&gt;" Url="[url_browser]" />
-      </uix:NApplicationCard.TargetApp>
-    </uix:NApplicationCard>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Func_ConfigSetupandChecks.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Func_ConfigSetupandChecks.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="internal_process">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="internal_process" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="var_Exercise_doc">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="var_Exercise_doc" />
+        </OutArgument>
+        <InOutArgument x:TypeArguments="ui:Browser" x:Key="browser_tab">
+          <VisualBasicReference x:TypeArguments="ui:Browser" ExpressionText="browser_tab" />
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="var_download_location">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="var_download_location" />
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="url_browser">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="url_browser" />
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="var_title_page">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="var_title_page" />
+        </InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Comp_ExerciseExecute.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Comp_ExerciseExecute.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="internal_process">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="internal_process" />
+        </InArgument>
+        <InArgument x:TypeArguments="ui:Browser" x:Key="browser_tab">
+          <VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="browser_tab" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="var_Exercise_doc">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="var_Exercise_doc" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="var_details">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="var_details" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="var_success_rate">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="var_success_rate" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="var_field_count">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="var_field_count" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="var_execurtion_time">
+          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="var_execurtion_time" />
+        </OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="388,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Success Rate: &quot;+ var_success_rate+Environment.NewLine+&#xA;&quot;Field Count: &quot;+var_field_count+Environment.NewLine+&#xA;&quot;Execution Time: &quot;+var_execurtion_time.ToString +&quot; milliseconds or &quot;+ (var_execurtion_time/1000).ToString +&quot; Seconds or &quot;+ (var_execurtion_time/1000/60).ToString +&quot; minutes.&quot;]" />
   </Sequence>
 </Activity>
